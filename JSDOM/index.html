@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--ชื่อ:<input 
+    id="fname"
+    class="input"
+    type="text"
+    name="fname"
+    value="ชื่อทดสอบ">
+    นามสกุล:<input
+    id="lname"
+    class="input"
+    type="text"
+    name="lname"
+    value="นามสกุลทดสอบ">
+    เบอร์:<input
+    id="phone"
+    class="input"
+    type="text"
+    name="phone"
+    value=""0923745974>
+    งานอดิเรก:
+    <input type="checkbox" name="fname" value="ฟุตบอล">ฟุตบอล
+    <input type="checkbox" name="fname" value="บาสเกตบอล">บาสเกตบอล
+    <input type="checkbox" name="fname" value="ว่ายน้ำ">ว่ายน้ำ
+    <button onclick="userClick()">Click Me</button>
+    <div onclick="divClick()">Click dov</div>
+    <script> 
+    function userClick(){
+        console.log("Button was Clicked!");
+    }
+    function divClick(){
+        console.log("Div was Clicked!");
+    }-->
+    
+    <input type ="rader" name="gerder" value = "male" onchange="changGender()"> male
+    <input type = "rader" name = "gerder" value="fname" onchange="changGender()">fname
+
+    <script>
+        /*let fnameInput = Document.getElementByID('fname')
+        console.log(fnameInput.value);*/
+
+        /*let inputs = document.getElementsByClassName('input');
+        console.log(inputs.length);//2 
+
+        for(let i = 0; i < inputs.length; i++ ){
+            console.log)in[i].values
+        }*/
+       
+        /*let inputs= document.querySelector('input[name="fname"]')
+       console.log(inputs.value);
+
+       let checkboxs = document.querySelectorAll('input[type="checkbox"]');
+       console.log(checkboxs);
+        for(let i = 0; i< checkboxs.length; i++){
+            console.log(checkboxs[i].value);
+     }*/
+
+       function changGender(){
+         // เลือก gerder ทั้งหมด
+        let gerder = document.querySelectorAll('input[name= "gerder"]');
+        // ดูว่าอันไหน Check
+        for (let i = 0; i<genders.length; i++){
+            if (gerders[i].checked){
+                console.log("Gender serlected:" + genders[i].value);
+            }
+
+        }
+    }
+     
+         </script>
+          
+            
+         
+
+</body>
+</html>
