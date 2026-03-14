@@ -1,5 +1,3 @@
-// load user ทั้งหมด จาก  api http://localhost:8000
-//นำ user ที่ได้มาแสดงในเว็บ ในhtml
 const BASE_URL = "http://localhost:8000";
 window.onload = async () => {
     await loadData();
@@ -13,14 +11,14 @@ const loadData = async () => {
     for (let i = 0; i < response.data.length; i++) {
         let user = response.data[i];
         htmlData += ` <div>
-        ${user.id} ${user.firstname} ${user.lastname}
-        <button>Edit</button>
+        ${user.id} ${user.firstname} ${user.lastname} ${user.gender}
+        <a href="index.html?id=${user.id}"><button>Edit</button></a>
         <button class='delete' data-id='${user.id}'>Delete</button>
         </div>`
     }
     htmlData += '</div>';
     userDOM.innerHTML = htmlData;
-    //หากต้องการลบ
+
     const deleteDOMs = document.getElementsByClassName("delete");
     for (let i = 0; i < deleteDOMs.length; i++) {
         deleteDOMs[i].addEventListener("click", async (event) => {
@@ -28,7 +26,7 @@ const loadData = async () => {
             const id = event.target.dataset.id;
             try{
                 await axios.delete(`${BASE_URL}/users/${id}`);
-                //http://localhost:8000/users/4
+                //http://localhost:8000/users
                 loadData(); // โหลดข้อมูลใหม่หลังจากลบสำเร็จ
             }catch(error){
                 console.error("Error deleting user:", error);
